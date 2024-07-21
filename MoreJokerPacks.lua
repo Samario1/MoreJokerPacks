@@ -18,7 +18,7 @@ local filesystem = NFS or love.filesystem
 local loc = filesystem.load(jokerpacks.path..'localization.lua')()
 
 
-local packs = {"Blank", "Common", "Uncommon", "Rare", "Legendary", "Epic", "Exotic", "Fusion", "Evolved", "Ritualistic"}
+local packs = {"Blank", "Common", "Uncommon", "Rare", "Legendary", "Epic", "Exotic", "Fusion", "Evolved"}
 
 for i = 1, #packs do
 	SMODS.Atlas({key = "joker_booster_" .. string.lower(packs[i]), path = "joker_booster_" .. string.lower(packs[i]) .. ".png", px = 71, py = 95 })
@@ -143,10 +143,6 @@ SMODS.Booster{
 		return create_card("Joker", G.pack_cards, nil, "cry_exotic", true, true, nil, "mjp_exotic_pack")
 	end,
 }
-end
-
-if SMODS.findModByID("JensAlmanac") then
-	-- TODO: Ritualistic Buffoon Pack
 end
 
 if SMODS.findModByID("joker_evolution") then
