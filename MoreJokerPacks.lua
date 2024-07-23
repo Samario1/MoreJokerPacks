@@ -104,7 +104,7 @@ SMODS.Booster{
 
 
 
-if SMODS.findModByID("Cryptid") then
+if SMODS.mods["Cryptid"] then
 	-- load additional jonkler packs
 	
 SMODS.Booster{
