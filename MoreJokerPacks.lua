@@ -24,7 +24,7 @@ SMODS.Atlas({key = 'p_jokerpacks', path = 'p_jokers.png', px = 71, py = 95 })
 
 function SMODS.current_mod.process_loc_text()
 	for i = 1, #packs do
-		SMODS.process_loc_text(G.localization.misc.dictionary, "mjp_booster_" .. string.lower(packs[i]),  packs[i] .. " Booster Pack")
+		SMODS.process_loc_text(G.localization.misc.dictionary, "mjp_booster_" .. string.lower(packs[i]),  packs[i] .. " Buffoon Pack")
 	end
 end
 
