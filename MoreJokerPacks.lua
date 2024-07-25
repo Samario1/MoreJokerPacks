@@ -22,8 +22,10 @@ local packs = {"Blank", "Common", "Uncommon", "Rare", "Legendary", "Epic", "Exot
 
 SMODS.Atlas({key = 'p_jokerpacks', path = 'p_jokers.png', px = 71, py = 95 })
 
-for i = 1, #packs do
-	SMODS.process_loc_text(G.localization.misc.dictionary, "mjp_booster_" .. string.lower(packs[i]),  packs[i] .. " Booster Pack")
+function SMODS.current_mod.process_loc_text()
+	for i = 1, #packs do
+		SMODS.process_loc_text(G.localization.misc.dictionary, "mjp_booster_" .. string.lower(packs[i]),  packs[i] .. " Booster Pack")
+	end
 end
 
 SMODS.Booster{
@@ -106,42 +108,44 @@ SMODS.Booster{
 
 if SMODS.Mods["Cryptid"] then
 	-- load additional jonkler packs
-	
-SMODS.Booster{
-	name = "Epic Buffoon Pack",
-	key = "epic_buffoon_pack",
-	atlas = 'p_jokerpacks',
-	pos = {x = 3, y = 0},
-	group_key = 'mjp_booster_epic',
-	weight = 0.2 * 1.2,
-	cost = 25,
-	config = {extra = 3, choose = 1, name = "Epic Buffoon Pack"},
-	discovered = true,
-	loc_vars = function(self, info_queue, card)
-		return { vars = {card.config.center.config.choose, card.ability.extra} }
-	end,
-	loc_txt = loc.buffoon_pack.epic,
-	create_card = function(self, card)
-		return create_card("Joker", G.pack_cards, nil, 1, true, true, nil, nil)
-	end,
-}
+	SMODS.Booster{
+		name = "Epic Buffoon Pack",
+		key = "epic_buffoon_pack",
+		atlas = 'p_jokerpacks',
+		pos = {x = 3, y = 0},
+		group_key = 'mjp_booster_epic',
+		weight = 0.2 * 1.2,
+		cost = 25,
+		config = {extra = 3, choose = 1, name = "Epic Buffoon Pack"},
+		discovered = true,
+		loc_vars = function(self, info_queue, card)
+			return { vars = {card.config.center.config.choose, card.ability.extra} }
+		end,
+		loc_txt = loc.buffoon_pack.epic,
+		create_card = function(self, card)
+			return create_card("Joker", G.pack_cards, nil, 1, true, true, nil, nil)
+		end,
+	}
 
-SMODS.Booster{
-	name = "Exotic Buffoon Pack",
-	key = "exotic_buffoon_pack",
-	atlas = 'p_jokerpacks',
-	pos = {x = 5, y = 0},
-	group_key = 'mjp_booster_exotic',
-	weight = 0.1 * 1.2,
-	cost = 65,
-	config = {extra = 3, choose = 1, name = "Exotic Buffoon Pack"},
-	discovered = true,
-	loc_vars = function(self, info_queue, card)
-		return { vars = {card.config.center.config.choose, card.ability.extra} }
-	end,
-	loc_txt = loc.buffoon_pack.exotic,
-	create_card = function(self, card)
-		return create_card("Joker", G.pack_cards, nil, "cry_exotic", true, true, nil, "mjp_exotic_pack")
-	end,
-}
+
+
+	SMODS.Booster{
+		name = "Exotic Buffoon Pack",
+		key = "exotic_buffoon_pack",
+		atlas = 'p_jokerpacks',
+		pos = {x = 5, y = 0},
+		group_key = 'mjp_booster_exotic',
+		weight = 0.1 * 1.2,
+		cost = 65,
+		config = {extra = 3, choose = 1, name = "Exotic Buffoon Pack"},
+		discovered = true,
+		loc_vars = function(self, info_queue, card)
+			return { vars = {card.config.center.config.choose, card.ability.extra} }
+		end,
+		loc_txt = loc.buffoon_pack.exotic,
+		create_card = function(self, card)
+			return create_card("Joker", G.pack_cards, nil, "cry_exotic", true, true, nil, "mjp_exotic_pack")
+		end,
+	}
+
 end
