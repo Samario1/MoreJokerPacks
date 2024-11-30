@@ -5,7 +5,7 @@
 --- MOD_AUTHOR: [Samario]
 --- MOD_DESCRIPTION: Dedicated joker packs for specific rarities of Joker.
 --- BADGE_COLOUR: 900090
---- DEPENDENCIES: []
+--- DEPENDENCIES: [Steamodded>=1.0.0~ALPHA-1103a]
 --- VERSION: 0.0.2
 --- PRIORITY: 10000
 
@@ -123,7 +123,7 @@ if SMODS.Mods["Cryptid"] then
 		end,
 		loc_txt = loc.buffoon_pack.epic,
 		create_card = function(self, card)
-			return create_card("Joker", G.pack_cards, nil, 1, true, true, nil, nil)
+			return create_card("Joker", G.pack_cards, nil, "cry_epic", true, true, nil, nil)
 		end,
 	}
 
