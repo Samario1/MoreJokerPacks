@@ -5,7 +5,7 @@
 --- MOD_AUTHOR: [Samario]
 --- MOD_DESCRIPTION: Dedicated joker packs for specific rarities of Joker.
 --- BADGE_COLOUR: 900090
---- DEPENDENCIES: []
+--- DEPENDENCIES: [Steamodded>=1.0.0~ALPHA-1103a]
 --- VERSION: 0.0.2
 --- PRIORITY: 10000
 
