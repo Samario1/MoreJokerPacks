@@ -123,7 +123,7 @@ if SMODS.Mods["Cryptid"] then
 		end,
 		loc_txt = loc.buffoon_pack.epic,
 		create_card = function(self, card)
-			return create_card("Joker", G.pack_cards, nil, 1, true, true, nil, nil)
+			return create_card("Joker", G.pack_cards, nil, "cry_epic", true, true, nil, nil)
 		end,
 	}
 
