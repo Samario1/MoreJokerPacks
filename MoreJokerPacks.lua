@@ -106,7 +106,7 @@ SMODS.Booster{
 
 
 
-if SMODS.Mods["Cryptid"] then
+if SMODS.find_mod("Cryptid") then
 	-- load additional jonkler packs
 	SMODS.Booster{
 		name = "Epic Buffoon Pack",
